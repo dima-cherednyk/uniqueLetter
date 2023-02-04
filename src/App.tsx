@@ -10,10 +10,9 @@ export const App: React.FC = () => {
     const words = text.split(' ');
     const deleteNewLine = words.map(x => x.replace(/[\n]/g, ' '));
     const deleteSpaces = deleteNewLine.filter(word => word !== '');
-    const wordsToLowerCase = deleteSpaces.map(word => word.toLowerCase());
     const uniqueLetterFromWord: string[] = [];
 
-    wordsToLowerCase.forEach(word => {
+    deleteSpaces.forEach(word => {
       const x = word.split('');
 
       x.find(t => {
